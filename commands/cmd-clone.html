@@ -10,7 +10,7 @@
 <body>
     <h1>Name</h1>
     <p>git-clone - Clone a repository into a new directory</p>
-
+	
     <h2>SYNOPSIS</h2>
     <p>
         <code>
@@ -25,6 +25,12 @@
         </code>
     </p>
 
+	<h3>LINK TO DOCUMENTATION</h3>
+	<p>
+		https://git-scm.com/docs/git-clone
+	</p>
+	
+	
     <h3>DESCRIPTION</h3>
     <p>Clones a repository into a newly created directory, creates remote-tracking branches for each branch in the
         cloned repository (visible using git branch --remotes), and creates and checks out an initial branch that
@@ -157,6 +163,27 @@ For example, with this:
 a URL like "git://example.org/path/to/repo.git" will be rewritten to "ssh://example.org/path/to/repo.git" for pushes, but pulls will still use the original URL.
 
     </p>
+	
+	<h3>CONFIGURATION</h3>
+	<p>
+		
+
+Everything below this line in this section is selectively included from the git-config[1] documentation. The content is the same as what’s found there:
+
+init.templateDir
+
+    Specify the directory from which templates will be copied. (See the "TEMPLATE DIRECTORY" section of git-init[1].)
+init.defaultBranch
+
+    Allows overriding the default branch name e.g. when initializing a new repository.
+clone.defaultRemoteName
+
+    The name of the remote to create when cloning a repository. Defaults to origin, and can be overridden by passing the --origin command-line option to git-clone[1].
+clone.rejectShallow
+
+    Reject to clone a repository if it is a shallow one, can be overridden by passing option --reject-shallow in command line. See git-clone[1]
+
+	</p>
 </body>
 
 </html>
