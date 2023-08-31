@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Rebase</title>
+</head>
+
+<body>
+    <h1>Name</h1>
+    <p>git-rebase - Reapply commits on top of another base tip</p>
+
+    <h1>SYNOPSIS</h1>
+    <p>
+        <code>
+            git rebase [-i | --interactive] [<options>] [--exec <cmd>]
+                [--onto <newbase> | --keep-base] [<upstream> [<branch>]]
+            git rebase [-i | --interactive] [<options>] [--exec <cmd>] [--onto <newbase>]
+                --root [<branch>]
+            git rebase (--continue | --skip | --abort | --quit | --edit-todo | --show-current-patch)
+        </code>
+    </p>
+
+    <h1>DESCRIPTION</h1>
+    <p>If <branch> is specified, git rebase will perform an automatic git switch <branch> before doing anything else. Otherwise it remains on the current branch.
+
+        If <upstream> is not specified, the upstream configured in branch.<name>.remote and branch.<name>.merge options will be used (see git-config[1] for details) and the --fork-point option is assumed. If you are currently not on any branch or if the current branch does not have a configured upstream, the rebase will abort.
+        
+        All changes made by commits in the current branch but that are not in <upstream> are saved to a temporary area. This is the same set of commits that would be shown by git log <upstream>..HEAD; or by git log 'fork_point'..HEAD, if --fork-point is active (see the description on --fork-point below); or by git log HEAD, if the --root option is specified.
+        
+        The current branch is reset to <upstream> or <newbase> if the --onto option was supplied. This has the exact same effect as git reset --hard <upstream> (or <newbase>). ORIG_HEAD is set to point at the tip of the branch before the reset.</p>
+
+    <h3>MODE OPTIONS</h3>
+    <p>The options in this section cannot be used with any other option, including not with each other:
+
+        --continue
+        Restart the rebasing process after having resolved a merge conflict.
+        
+        --skip
+        Restart the rebasing process by skipping the current patch.
+        
+        --abort
+        Abort the rebase operation and reset HEAD to the original branch. If <branch> was provided when the rebase operation was started, then HEAD will be reset to <branch>. Otherwise HEAD will be reset to where it was when the rebase operation was started.
+        
+        --quit
+        Abort the rebase operation but HEAD is not reset back to the original branch. The index and working tree are also left unchanged as a result. If a temporary stash entry was created using --autostash, it will be saved to the stash list.
+        
+        --edit-todo
+        Edit the todo list during an interactive rebase.
+        
+        --show-current-patch
+        Show the current patch in an interactive rebase or when rebase is stopped because of conflicts. This is the equivalent of git show REBASE_HEAD.</p>
+</body>
+
+</html>
