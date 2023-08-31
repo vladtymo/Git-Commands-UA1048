@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Remote</title>
+</head>
+
+<body>
+    <h1>Name</h1>
+    <p>git-remote - manages the set of remotes that you are tracking with your local repository</p>
+
+    <h2>SYNOPSIS</h2>
+    <p>
+        <code>
+            git remote [-v | --verbose]<br>
+            git remote add [-t <branch>] [-m <master>] [-f] [--[no-]tags] [--mirror=(fetch|push)] <name> <URL><br>
+            git remote rename [--[no-]progress] <old> <new><br>
+            git remote remove <name><br>
+            git remote set-head <name> (-a | --auto | -d | --delete | <branch>)<br>
+            git remote set-branches [--add] <name> <branch>…​<br>
+            git remote get-url [--push] [--all] <name><br>
+            git remote set-url [--push] <name> <newurl> [<oldurl>]<br>
+            git remote set-url --add [--push] <name> <newurl><br>
+            git remote set-url --delete [--push] <name> <URL><br>
+            git remote [-v | --verbose] show [-n] <name>…​<br>
+            git remote prune [-n | --dry-run] <name>…​<br>
+            git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)…​]
+        </code>
+    </p>
+
+    <h3>DESCRIPTION</h3>
+    <p>This command manages the set of remotes that you are tracking with your local repository.
+        If you try running git remote -v in your repositories, you'll probably see something called origin.
+        You may notice origin in many messages from Git. origin is the human-friendly name for the URL that
+        the remote repository is stored at. It's like a key value pair, and origin is the default.</p>
+
+    <h3>OPTIONS</h3>
+    <p>-v<br>
+</body>
+
+</html>
