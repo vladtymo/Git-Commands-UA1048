@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Add</title>
+</head>
+
+<body>
+    <h1>Git Add</h1>
+    <p>git-add - Add file contents to the index</p>
+
+    <h2>SYNOPSIS</h2>
+    <p>
+        <code>
+
+            git add [--verbose | -v] [--dry-run | -n] [--force | -f] [--interactive | -i] [--patch | -p]
+	  [--edit | -e] [--[no-]all | --[no-]ignore-removal | [--update | -u]] [--sparse]
+	  [--intent-to-add | -N] [--refresh] [--ignore-errors] [--ignore-missing] [--renormalize]
+	  [--chmod=(+|-)x] [--pathspec-from-file=<file> [--pathspec-file-nul]]
+	  [--] [<pathspec>…​]
+
+        </code>
+    </p>
+
+    <h3>DESCRIPTION</h3>
+    <p>This command updates the index using the current content found in the working tree, to prepare the content staged for the next commit. It typically adds the current content of existing paths as a whole, but with some options it can also be used to add content with only part of the changes made to the working tree files applied, or remove paths that do not exist in the working tree anymore.
+
+The "index" holds a snapshot of the content of the working tree, and it is this snapshot that is taken as the contents of the next commit. Thus after making any changes to the working tree, and before running the commit command, you must use the add command to add any new or modified files to the index.
+
+This command can be performed multiple times before a commit. It only adds the content of the specified file(s) at the time the add command is run; if you want subsequent changes included in the next commit, then you must run git add again to add the new content to the index.
+
+The git status command can be used to obtain a summary of which files have changes that are staged for the next commit.
+
+The git add command will not add ignored files by default. If any ignored files were explicitly specified on the command line, git add will fail with a list of ignored files. Ignored files reached by directory recursion or filename globbing performed by Git (quote your globs before the shell) will be silently ignored. The git add command can be used to add ignored files with the -f (force) option.
+
+Please see git-commit[1] for alternative ways to add content to a commit.
+</p>
+
+    <h3>OPTIONS</h3>
+    <p>-n
+        --dry-run
+        Don’t actually add the file(s), just show if they exist and/or will be ignored.
+        
+        -v
+        --verbose
+        Be verbose.
+        
+        -f
+        --force
+        Allow adding otherwise ignored files.
+
+        -C <commit>
+            --reuse-message=<commit>
+                Take an existing commit object, and reuse the log message and the authorship information (including the
+                timestamp) when creating the commit.
+
+                -c <commit>
+                    --reedit-message=<commit>
+                        Like -C, but with -c the editor is invoked, so that the user can further edit the commit
+                        message.</p>
+</body>
+
+</html>
